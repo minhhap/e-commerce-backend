@@ -51,23 +51,13 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new tag
-  Tag.create(req.body)
-    .then((tag) => {
-      // if the tag already exists, we need to reject the post request and inform the user
-      if (req.body.tag.tag_name) {
-        const TagIdArr = req.body.tag.map((tag_name) => {
-          return (
-            "This tag already exists."
-          )
-        })
-      }
-      // if no same tag exists, just respond
-      res.status(200).json(tag); // HELP
-    })
-    .then((TagIds) => res.status(200).json(TagIds))
-    .catch((err) => {
+  Tag.create({
+    tag_name: req.body.tag_name
+  })
+    .then(dbTagData => res.json(dbTagData))
+    .catch(err => {
       console.log(err);
-      res.status(400).json(err);
+      res.status(500).json(err);
     });
 });
 
