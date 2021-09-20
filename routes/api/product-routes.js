@@ -68,7 +68,6 @@ router.post('/', (req, res) => {
       tagIds: [1, 2, 3, 4] // HELP: HOW TO CREATE TAGID WHEN IT'S NOT AN ATTIBUTE IN THE PRODUCT OBJECT?
     }
   */
-  console.log(res);
   Product.create(req.body)
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
