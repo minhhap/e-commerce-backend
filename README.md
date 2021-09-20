@@ -3,7 +3,8 @@
 Back end for an e-commerce site that allows GET, POST, PUT, and DELETE requests for Products, Categories and Product Tags.
 
 ## Technology
-* Express.js API
+* Node.js
+* Express.js
 * Sequelize
 * MySQL database
 * Javascript
