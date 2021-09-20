@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
       product_name: "Basketball",
       price: 200.00,
       stock: 3,
-      tagIds: [1, 2, 3, 4] // HELP: HOW TO CREATE TAGID WHEN IT'S NOT AN ATTIBUTE IN THE PRODUCT OBJECT?
+      tagIds: [1, 2, 3, 4] 
     }
   */
   Product.create(req.body)
